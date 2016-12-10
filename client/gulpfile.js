@@ -32,11 +32,8 @@ gulp.task('style', function () {
 });
 
 gulp.task('scripts', function () {
-  gulp.src(SOURCE_DIRECTORY + "index.js.jsx")
-    .pipe(browserify({
-       transform: ['reactify'],
-       extensions: ['.jsx']
-    }))
+  gulp.src(SOURCE_DIRECTORY + "index.js")
+    .pipe(browserify({}))
     .pipe(concat('bundle.js'))
     .pipe(gulp.dest(TARGET_DIRECTORY));
 });
