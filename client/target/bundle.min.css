@@ -614,6 +614,33 @@ h1 {
   margin-left: -12px;
   border-right-color: #fff; }
 
+listH1 {
+  padding-bottom: 2vh;
+  padding-top: 15vw;
+  margin-bottom: 0;
+  box-shadow: 0 7px 19px black; }
+
+.place {
+  width: 100%;
+  text-align: center;
+  border-bottom: 3px solid black;
+  padding-top: 40px; }
+
+.dont {
+  display: none;
+  text-align: center;
+  font-size: 2em; }
+
+.show {
+  display: block !important;
+  font-size: 4vw; }
+
+.name {
+  font-size: 6vw; }
+
+.place:nth-child(even) {
+  background: #e8e8e8; }
+
 #map {
   width: 80%;
   height: 20%; }
