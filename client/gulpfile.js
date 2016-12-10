@@ -5,13 +5,21 @@ var gulp = require('gulp'),
     concat = require('gulp-concat'),
     uglify = require('gulp-uglify'),
     webpack = require('webpack-stream'),
+    browserify = require('gulp-browserify'),
     del = require('del'),
     jsx = require('gulp-jsx'),
+    babel = require('gulp-babel'),
+    jsxLoader = require('jsx-loader'),
     SOURCE_DIRECTORY = "./src/",
+    BUILD_DIRECTORY = "./build/",
     TARGET_DIRECTORY = "./target/",
-//    CORDOVA_DIRECTORY = "./src/cordova/www",
     STYLE_DIRECTORY = SOURCE_DIRECTORY + 'style/',
     MARKUP_FILE_NAME = "index.html";
+
+var gutil = require('gulp-util');
+var rename = require('gulp-rename');
+
+
 
 gulp.task('markup', function () {
   del(TARGET_DIRECTORY + 'index.html');
@@ -27,11 +35,14 @@ gulp.task('style', function () {
 });
 
 gulp.task('scripts', function () {
-  del(TARGET_DIRECTORY + 'bundle.min.js');
-  gulp.src(SOURCE_DIRECTORY + "index.js")
-    .pipe(webpack())
-    .pipe(jsx({factory : 'React.createClass'}))
-    .pipe(gulp.dest(TARGET_DIRECTORY + 'bundle.min.js'));
+  gulp.src(SOURCE_DIRECTORY + "**/*.jsx")
+    .pipe(browserify({
+       transform: ['reactify'],
+       extensions: ['.jsx']
+    }))
+    .pipe(concat('bundle.min.js'))
+    .pipe(gulp.dest(TARGET_DIRECTORY));
+
 });
 
 gulp.task('default', [
