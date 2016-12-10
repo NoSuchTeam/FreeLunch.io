@@ -620,13 +620,16 @@ listH1 {
   margin-bottom: 0;
   box-shadow: 0 7px 19px black; }
 
+h1 listH1 {
+  margin-bottom: 0; }
+
 .place {
   width: 100%;
   text-align: center;
-  border-bottom: 3px solid black;
+  border-bottom: 1px solid black;
   padding-top: 40px; }
 
-.dont {
+.hidden {
   display: none;
   text-align: center;
   font-size: 2em; }
