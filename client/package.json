@@ -1,0 +1,20 @@
+{
+  "name": "freelunch-client",
+  "version": "1.0.0",
+  "description": "",
+  "main": "gulpfile.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "MIT",
+  "devDependencies": {
+    "del": "^2.2.2",
+    "gulp-concat": "^2.6.1",
+    "gulp-jsx": "^2.0.1",
+    "gulp-rename": "^1.2.2",
+    "gulp-sass": "^2.3.2",
+    "merge-stream": "^1.0.1",
+    "webpack-stream": "^3.2.0"
+  }
+}
