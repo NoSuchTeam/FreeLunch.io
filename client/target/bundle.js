@@ -7,6 +7,8 @@ var place = $(".place");
 var hidden = $(".hidden");
 var clicked = false
 
+
+
 place.click(function(){
 	// check the number div that was clicked (one indexed)
 	var num = this.id
@@ -20,10 +22,7 @@ place.click(function(){
 	
 })
 
-var data = {
-	age: 43,
-	city: "Springfield"
-};
+
 
 var arr = [
 	{
@@ -41,42 +40,98 @@ var arr = [
 		email: "goodstuff@gmail.com",
 		website: "goodstuff.com",
 		description: "we do good stuff. Hahahaha!!!"
+	},
+	{
+		name: "We have Money",
+		address: "11802 N. FR 101 Willard MO 65781",
+		phone: "417-444-4444",
+		email: "goodstuff@gmail.com",
+		website: "goodstuff.com",
+		description: "we do good stuff. Hahahaha!!!"
+	},
+	{
+		name: "We have Money",
+		address: "11802 N. FR 101 Willard MO 65781",
+		phone: "417-444-4444",
+		email: "goodstuff@gmail.com",
+		website: "goodstuff.com",
+		description: "we do good stuff. Hahahaha!!!"
+	},
+	{
+		name: "We have Money",
+		address: "11802 N. FR 101 Willard MO 65781",
+		phone: "417-444-4444",
+		email: "goodstuff@gmail.com",
+		website: "goodstuff.com",
+		description: "we do good stuff. Hahahaha!!!"
+	},
+	{
+		name: "We have Money",
+		address: "11802 N. FR 101 Willard MO 65781",
+		phone: "417-444-4444",
+		email: "goodstuff@gmail.com",
+		website: "goodstuff.com",
+		description: "we do good stuff. Hahahaha!!!"
 	}
-];
-// for each of the places.
-for(var i = 0; i<arr.length; i++){
 
+];
+for(var i = 0; i<arr.length; i++){
 	jQuery('<div/>', {
 	    class: 'place',
-	    id: i,
+	    id: i
 	}).appendTo('#links');
-
-	jQuery('<div/>', {
-	    class: 'placeName show name',
-	    text: arr[i].name
-	}).appendTo('.place')[i];
-
-	jQuery('<div/>', {
-	    class: 'dont',
-	    text: "Phone: "+ arr[i].phone
-	}).appendTo('.place')[i];
-
-	jQuery('<div/>', {
-	    class: 'dont',
-	    text: "Email: "+ arr[i].email
-	}).appendTo('.place')[i];
-
-	jQuery('<div/>', {
-	    class: 'dont',
-	    text: "Website: "+ arr[i].website
-	}).appendTo('.place')[i];
-
-	jQuery('<div/>', {
-	    class: 'show',
-	    text: "Descriptioin: "+ arr[i].description
-	}).appendTo('.place')[i];
-
 }
+
+
+	
+
+
+	
+	jQuery('<div/>', {
+		class: 'placeName show name',
+		text: "working"
+	}).appendTo('.place');
+
+	jQuery('<div/>', {
+		class: 'hidden',
+		text: "work"
+	}).appendTo('.name');
+
+	jQuery('<div/>', {
+		class: '',
+		text: "Address"
+	}).appendTo('.hidden');
+
+	
+	jQuery('<div/>', {
+		class: '',
+		text: "Phone"
+	}).appendTo('.hidden');
+
+	
+	jQuery('<div/>', {
+		class: '',
+		text: "Email: "
+	}).appendTo('.hidden');
+
+	
+	jQuery('<div/>', {
+		class: '',
+		text: "Website: "
+	}).appendTo('.hidden');
+
+	jQuery('<div/>', {
+		class: '',
+		text: "this is good stuff"
+	}).appendTo('.place');
+
+	
+
+
+
+
+
+	
 
 
 // <div class = "place" id = "1">
