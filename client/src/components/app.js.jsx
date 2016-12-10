@@ -1,4 +1,5 @@
 var React = require("react")
+var ReactDOM = require("react-dom")
 var ReactRouter = require("react-router")
 var Link = ReactRouter.Link
 var browserHistory = ReactRouter.browserHistory
@@ -35,5 +36,5 @@ var App = React.createClass({
 
 });
 
-React.DOM.render(App, document.getElementById('map'));
+ReactDOM.render(React.createElement(App), document.getElementById('map'));
 
