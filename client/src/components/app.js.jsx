@@ -27,4 +27,13 @@ var App = React.createClass({
     );
   },
 
+  render : function () {
+    return (
+      <div id={"TEST"}>test</div>
+    );
+  }
+
 });
+
+React.DOM.render(App, document.getElementById('map'));
+

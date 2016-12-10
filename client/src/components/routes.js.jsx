@@ -5,6 +5,7 @@ var Route = ReactRouter.Route
 var IndexRoute = ReactRouter.IndexRoute
 var browserHistory = ReactRouter.browserHistory
 
+
 var Routes = React.createClass({
   render: function() {
     return (
@@ -19,3 +20,8 @@ var Routes = React.createClass({
     );
   }
 });
+
+//ReactDOM.render(Routes);
+
+module.exports = Routes;
+
