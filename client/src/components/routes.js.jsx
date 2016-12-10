@@ -10,12 +10,13 @@ var Routes = React.createClass({
   render: function() {
     return (
       <Router history={browserHistory}>
-        <Route path="/" component={App} />
-        <IndexRoute component={Profile} />
-        <Route path="map" component={Map} />
-        <Route path="lists" component={Lists} />
-        <Route path="suggest" component={Suggest} />
-        <Route path="notifications" component={Notifications} />
+        <Route path="/" component={App}>
+          <IndexRoute component={Profile} />
+          <Route path="/map" component={Map} />
+          <Route path="/lists" component={Lists} />
+          <Route path="/suggest" component={Suggest} />
+          <Route path="/notifications" component={Notifications} />
+        </Router>
       </Router>
     );
   }
