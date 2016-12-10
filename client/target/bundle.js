@@ -25048,7 +25048,40 @@ var ReactDOM = require("react-dom")
 var ReactRouter = require("react-router")
 var Link = ReactRouter.Link
 var browserHistory = ReactRouter.browserHistory
+var Routes = require('./routes');
 
+/*Link = function () {
+  return <div onClick={function () {
+    browserHistory.push(this.route)
+  }}>{this.contents}</div>
+
+}
+
+Link = React.createClass({
+
+  getInitialState : function () {
+//    this.onClick = this.onClick.bind(this);
+    return {};
+  },
+
+  pushRoute : function () {
+    console.log('executing push for ' + route);
+//    browserHistory.push(route);
+  },
+
+  render : function () {
+    var route = this.props.to,
+        getClick = function () {
+          return function () {browserHistory.push(route)};
+        };
+
+    return (
+      <button onClick={getClick()}>{this.props.contents}</button>
+    );
+  }
+
+});
+*/
 var App = React.createClass({displayName: "App",
   getInitalState: function() {
     return ({});
@@ -25056,40 +25089,88 @@ var App = React.createClass({displayName: "App",
 
   navButtons: function() {
     return(
-      React.createElement("ul", {className: "nav navbar-nav"}, 
-        React.createElement(Link, {to: "map"}, 
+      React.createElement("ul", {role: "nav", className: "nav navbar-nav"}, 
+        React.createElement(Link, {to: '/map'}, 
           "Map"
         ), 
-        React.createElement(Link, {to: "lists"}, 
+        React.createElement(Link, {to: '/lists'}, 
           "Lists"
         ), 
-        React.createElement(Link, {to: "suggest"}, 
+        React.createElement(Link, {to: '/suggest'}, 
           "Suggest"
         ), 
-        React.createElement(Link, {to: "notifications"}, 
+        React.createElement(Link, {to: '/notifications'}, 
           "Notifications"
         )
       )
     );
   },
 
-  render : function () {
-    return (
-      React.createElement("div", {id: "TEST"}, "test")
+  render : function() {
+    return(
+      React.createElement("ul", {role: "nav", className: "nav navbar-nav"}, 
+        React.createElement(Link, {to: '/map'}, 
+          "Map"
+        ), 
+        React.createElement(Link, {to: '/lists'}, 
+          "Lists"
+        ), 
+        React.createElement(Link, {to: '/suggest'}, 
+          "Suggest"
+        ), 
+        React.createElement(Link, {to: '/notifications'}, 
+          "Notifications"
+        )
+      )
     );
-  }
+  }/*,
 
+  render : function () {
+    return(
+      <ul className="nav navbar-nav">
+        <Link to='/map' contents="Map">
+        </Link>
+        <Link to='/lists' contents="List">
+        </Link>
+        <Link to='/suggest' contents="Suggest">
+        </Link>
+        <Link to='/notifications' contents="Notifications">
+        </Link>
+      </ul>
+    );
+  }*/
 });
 
-ReactDOM.render(React.createElement(App), document.getElementById('map'));
+window.onload = function () {
+  ReactDOM.render(React.createElement(Routes), document.getElementById('map'));
+};
 
 
 
-},{"react":232,"react-dom":46,"react-router":200}],236:[function(require,module,exports){
+},{"./routes":236,"react":232,"react-dom":46,"react-router":200}],236:[function(require,module,exports){
+/*var mithril = require('mithril'),
+    home = require('./home'),
+    user = require('./user'),
+    map = require('./map'),
+    suggest = require('./suggest');
+
+m.route(document.body, {
+  '/' : home,
+  '/search' : search,
+  '/user' :  user,
+  '/map' : map,
+  '/suggest' : suggest
+});
+
+
+*/
+
+
+},{}],237:[function(require,module,exports){
 var App = require('./components/app.js');
 
 module.exports = App;
 
 
 
-},{"./components/app.js":235}]},{},[236])
+},{"./components/app.js":235}]},{},[237])

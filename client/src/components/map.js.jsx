@@ -14,13 +14,13 @@ L.marker([51.5, -0.09]).addTo(map)
 
 var Map = React.createClass({
 
-  getInitialState : function (id) {
-
+  getInitialState : function () {
+    return {};
   },
 
   render : function () {
     return (
-      <div id={id} class=".map"/>
+      <div id={props.id} class=".map"/>
     );
   }
 
